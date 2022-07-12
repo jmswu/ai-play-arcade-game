@@ -1,10 +1,6 @@
-from tkinter.messagebox import NO
 import cv2 as cv
-import numpy as np
-
 
 class CaptureImage():
-
     def __init__(self, videoId: int) -> None:
         self._cap = cv.VideoCapture(videoId)
         if not self._cap.isOpened():
