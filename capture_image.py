@@ -1,13 +1,15 @@
+from tkinter.messagebox import NO
 import cv2 as cv
 import numpy as np
 
+
 class CaptureImage():
-    
-    def __init__(self, videoId: int):
+
+    def __init__(self, videoId: int) -> None:
         self._cap = cv.VideoCapture(videoId)
         if not self._cap.isOpened():
             raise Exception(f'Video {videoId} cannot be opened')
-        
+
     def getImage(self):
         while True:
             ret, frame = self._cap.read()
@@ -21,11 +23,10 @@ class CaptureImage():
                 cv.destroyAllWindows()
                 return frame
 
-    def __del__(self):
+    def __del__(self) -> None:
         self._cap.release()
 
 
-    
 if __name__ == '__main__':
     # test code
     capture = CaptureImage(0)
