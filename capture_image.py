@@ -21,6 +21,9 @@ class CaptureImage():
                 cv.destroyAllWindows()
                 return frame
 
+    def __del__(self):
+        self._cap.release()
+
 
     
 if __name__ == '__main__':
