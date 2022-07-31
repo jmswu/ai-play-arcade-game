@@ -10,6 +10,8 @@ class CaptureImage():
         while True:
             ret, frame = self._cap.read()
 
+            frame = cv.flip(frame, 1)
+
             if not ret:
                 raise Exception(f'Return value is {ret}')
 
