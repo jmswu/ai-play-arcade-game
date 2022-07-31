@@ -2,7 +2,7 @@ import time
 import cv2 as cv
 from capture_image import CaptureImage
 
-print('hell world, my AI app')
+print('hello world, my AI app')
 
 
 class FrameRate:
